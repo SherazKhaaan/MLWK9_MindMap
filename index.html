@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clustering for Machine Learning Mind Map</title>
+  <title>Clustering Mind Map</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,8 +17,8 @@
     }
     .mindmap {
       position: relative;
-      width: 1100px;
-      height: 750px;
+      width: 1200px;
+      height: 800px;
       margin: 20px 0;
       background-color: white;
       border-radius: 10px;
@@ -39,7 +39,7 @@
       transform: scale(1.05);
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    /* Colors: Red = Central concept, Blue = Major categories, Green = Details */
+    /* Colors */
     .red {
       background-color: #ffcccc;
       border: 2px solid #e60000;
@@ -58,7 +58,7 @@
     }
     /* Info panel styles */
     #infoPanel {
-      width: 1100px;
+      width: 1200px;
       min-height: 150px;
       padding: 15px;
       margin-top: 20px;
@@ -82,25 +82,6 @@
       stroke: #999;
       stroke-width: 2;
     }
-    .legend {
-      margin-top: 20px;
-      display: flex;
-      gap: 20px;
-    }
-    .legendItem {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .legendBox {
-      width: 20px;
-      height: 20px;
-      border-radius: 4px;
-    }
-    .highlight {
-      font-weight: bold;
-      color: #e74c3c;
-    }
   </style>
 </head>
 <body>
@@ -108,92 +89,69 @@
     <h1>Clustering for Machine Learning</h1>
     <div class="mindmap" id="mindmap">
       <!-- SVG for connecting lines -->
-      <svg width="1100" height="750" style="position: absolute; top: 0; left: 0;">
-        <!-- Lines from central node (red) to blue nodes -->
-        <line x1="550" y1="375" x2="150" y2="100" />
-        <line x1="550" y1="375" x2="950" y2="100" />
-        <line x1="550" y1="375" x2="150" y2="650" />
-        <line x1="550" y1="375" x2="950" y2="650" />
+      <svg width="1200" height="800" style="position: absolute; top: 0; left: 0;">
+        <!-- Main branches -->
+        <line x1="600" y1="400" x2="200" y2="150" />
+        <line x1="600" y1="400" x2="1000" y2="150" />
+        <line x1="600" y1="400" x2="200" y2="650" />
+        <line x1="600" y1="400" x2="1000" y2="650" />
         
-        <!-- Sub-branches from Goals & Applications -->
-        <line x1="150" y1="100" x2="50" y2="30" />
-        <line x1="150" y1="100" x2="50" y2="170" />
+        <!-- Sub-branches -->
+        <line x1="200" y1="150" x2="100" y2="50" />
+        <line x1="200" y1="150" x2="100" y2="250" />
         
-        <!-- Sub-branches from Partition-Based Clustering -->
-        <line x1="950" y1="100" x2="850" y2="30" />
-        <line x1="950" y1="100" x2="1050" y2="30" />
-        <line x1="950" y1="100" x2="950" y2="170" />
+        <line x1="1000" y1="150" x2="900" y2="50" />
+        <line x1="1000" y1="150" x2="1100" y2="50" />
+        <line x1="1000" y1="150" x2="1000" y2="250" />
         
-        <!-- Sub-branches from Density-Based Clustering -->
-        <line x1="150" y1="650" x2="50" y2="580" />
-        <line x1="150" y1="650" x2="50" y2="720" />
+        <line x1="200" y1="650" x2="100" y2="550" />
+        <line x1="200" y1="650" x2="100" y2="750" />
         
-        <!-- Sub-branches from Hierarchical Clustering -->
-        <line x1="950" y1="650" x2="850" y2="580" />
-        <line x1="950" y1="650" x2="1050" y2="580" />
-        <line x1="950" y1="650" x2="950" y2="720" />
+        <line x1="1000" y1="650" x2="900" y2="550" />
+        <line x1="1000" y1="650" x2="1100" y2="550" />
+        <line x1="1000" y1="650" x2="1000" y2="750" />
       </svg>
       
-      <!-- Central Red Node -->
-      <div class="node red" style="width: 220px; top: 350px; left: 440px;"
-           onclick="showInfo('Clustering – Intro', '<ul><li><span class=\'highlight\'>Goal:</span> Group data points so that points in the same cluster are close and those in different clusters are far apart.</li><li>Used in unsupervised learning and many applications.</li></ul>')">
+      <!-- Central Node -->
+      <div class="node red" style="width: 220px; top: 380px; left: 490px;"
+           onclick="showInfo('Clustering – Intro', '<ul><li>Goal: Group data points into clusters.</li><li>Used in unsupervised learning applications.</li></ul>')">
         Clustering – Intro
       </div>
       
-      <!-- Blue Node: Goals & Applications -->
-      <div class="node blue" style="width: 240px; top: 20px; left: 20px;"
-           onclick="showInfo('Goals &amp; Applications', '<ul><li><span class=\'highlight\'>Goal:</span> Cluster similar points together.</li><li><span class=\'highlight\'>Applications:</span> Biological networks (e.g., PPINs), recommendation systems, outlier detection, and more.</li></ul>')">
-        Goals &amp; Applications
+      <!-- Blue Nodes (Main Topics) -->
+      <div class="node blue" style="width: 250px; top: 120px; left: 120px;"
+           onclick="showInfo('Goals & Applications', '<ul><li>Biological networks, recommendation systems, fraud detection.</li></ul>')">
+        Goals & Applications
       </div>
-      <!-- Green nodes under Goals & Applications -->
-      <div class="node green" style="width: 200px; top: -10px; left: -10px;"
-           onclick="showInfo('Clustering Goal', '<ul><li>Intra-cluster similarity should be high; inter-cluster similarity should be low.</li></ul>')">
-        Intra/Inter Distances
-      </div>
-      <div class="node green" style="width: 200px; top: 80px; left: -10px;"
-           onclick="showInfo('Real-World Applications', '<ul><li>Used in biological networks, recommendation systems, unsupervised feature learning, and fraud detection.</li></ul>')">
-        Real-World Apps
-      </div>
-      
-      <!-- Blue Node: Partition-Based Clustering -->
-      <div class="node blue" style="width: 260px; top: 20px; left: 820px;"
-           onclick="showInfo('Partition-Based Clustering', '<ul><li>Divides data into k clusters.</li><li><span class=\'highlight\'>k-Means:</span> Minimizes squared Euclidean distance.</li><li><span class=\'highlight\'>k-Median:</span> Uses median (Manhattan distance).</li><li>k-Means++ improves initialization.</li></ul>')">
+      <div class="node blue" style="width: 270px; top: 120px; left: 880px;"
+           onclick="showInfo('Partition-Based Clustering', '<ul><li>k-Means: Minimizes squared Euclidean distance.</li><li>k-Median: Uses median (Manhattan distance).</li></ul>')">
         Partition-Based Clustering
       </div>
-      <!-- Green nodes under Partition-Based Clustering -->
-      <div class="node green" style="width: 220px; top: -10px; left: 800px;"
-           onclick="showInfo('k-Means', '<ul><li>Cost function: ∑ min<sub>j</sub> ||x<sub>i</sub> – μ<sub>j</sub>||².</li><li>Iterative assignment &amp; update steps.</li></ul>')">
-        k-Means
-      </div>
-      <div class="node green" style="width: 220px; top: 80px; left: 1030px;"
-           onclick="showInfo('k-Median &amp; k-Means++', '<ul><li>k-Median minimizes Manhattan distances using medians.</li><li>k-Means++: Chooses initial centers probabilistically to improve results.</li></ul>')">
-        k-Median &amp; k-Means++
-      </div>
-      
-      <!-- Blue Node: Density-Based Clustering -->
-      <div class="node blue" style="width: 240px; top: 650px; left: 20px;"
-           onclick="showInfo('Density-Based Clustering', '<ul><li><span class=\'highlight\'>DBSCAN:</span> Clusters based on point density.</li><li>Key parameters: ε (radius) and m (min points).</li><li>Identifies core points and marks outliers as noise.</li></ul>')">
+      <div class="node blue" style="width: 260px; top: 620px; left: 120px;"
+           onclick="showInfo('Density-Based Clustering', '<ul><li>DBSCAN: Clusters based on point density.</li><li>Identifies noise and core points.</li></ul>')">
         Density-Based Clustering
       </div>
-      <!-- Green node under Density-Based Clustering -->
-      <div class="node green" style="width: 220px; top: 630px; left: -10px;"
-           onclick="showInfo('DBSCAN', '<ul><li>Finds ε-neighborhoods and labels points with ≥ m neighbors as core points.</li><li>Clusters form from connected core points.</li></ul>')">
-        DBSCAN
-      </div>
-      
-      <!-- Blue Node: Hierarchical Clustering -->
-      <div class="node blue" style="width: 240px; top: 650px; left: 820px;"
-           onclick="showInfo('Hierarchical Clustering', '<ul><li>Builds a tree (dendrogram) of clusters.</li><li><span class=\'highlight\'>Agglomerative:</span> Bottom-up merging using linkage criteria (single, average, complete).</li><li><span class=\'highlight\'>Divisive:</span> Top-down splitting (e.g., via bisection or sparsest cut).</li></ul>')">
+      <div class="node blue" style="width: 260px; top: 620px; left: 880px;"
+           onclick="showInfo('Hierarchical Clustering', '<ul><li>Agglomerative: Bottom-up merging.</li><li>Divisive: Top-down splitting.</li></ul>')">
         Hierarchical Clustering
       </div>
-      <!-- Green nodes under Hierarchical Clustering -->
-      <div class="node green" style="width: 220px; top: 630px; left: 800px;"
-           onclick="showInfo('Agglomerative Clustering', '<ul><li>Merges individual points into clusters.</li><li>Linkage methods determine how distances are computed.</li></ul>')">
-        Agglomerative
+      
+      <!-- Green Nodes (Details) -->
+      <div class="node green" style="width: 220px; top: 30px; left: 80px;"
+           onclick="showInfo('Intra/Inter Distances', '<ul><li>Same-cluster points should be close; different clusters should be far.</li></ul>')">
+        Intra/Inter Distances
       </div>
-      <div class="node green" style="width: 220px; top: 710px; left: 1030px;"
-           onclick="showInfo('Divisive Clustering &amp; Dendrograms', '<ul><li>Splits data recursively into a tree structure.</li><li>Sparsest cut can be used for splitting.</li></ul>')">
-        Divisive &amp; Dendrograms
+      <div class="node green" style="width: 220px; top: 220px; left: 80px;"
+           onclick="showInfo('Real-World Uses', '<ul><li>Unsupervised learning in various domains.</li></ul>')">
+        Real-World Uses
+      </div>
+      <div class="node green" style="width: 220px; top: 30px; left: 880px;"
+           onclick="showInfo('k-Means', '<ul><li>Iterative assignment & update steps.</li></ul>')">
+        k-Means
+      </div>
+      <div class="node green" style="width: 220px; top: 220px; left: 880px;"
+           onclick="showInfo('k-Median', '<ul><li>Uses Manhattan distance.</li></ul>')">
+        k-Median
       </div>
     </div>
     
@@ -201,23 +159,7 @@
     <div id="infoPanel">
       <div class="infoTitle" id="infoTitle">Click on a concept to see details</div>
       <div class="infoContent" id="infoContent">
-        Select any node in the mind map to display detailed information about that concept.
-      </div>
-    </div>
-    
-    <!-- Legend -->
-    <div class="legend">
-      <div class="legendItem">
-        <div class="legendBox red"></div>
-        <span>Big Picture</span>
-      </div>
-      <div class="legendItem">
-        <div class="legendBox blue"></div>
-        <span>Major Categories</span>
-      </div>
-      <div class="legendItem">
-        <div class="legendBox green"></div>
-        <span>Details</span>
+        Select any node in the mind map to display detailed information.
       </div>
     </div>
   </div>
